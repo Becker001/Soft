@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convector metric system</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div class="converter">
+    <div class="converter-container">
+      <h1 class="converter-title">Конвертер скорости передачи данных</h1>
+
+      <div class="converter-content">
+        <div class="converter-content__card">
+          <div class="converter-content__card-title">
+            <div class="converter-content__card-title-text">Введите скорость
+              в Килобайтах (Кб)</div>
+          </div>
+          <input type="number" class="converter-content__card-input" id="volumeInput1">
+
+          <div class="converter-content__card-result">
+            <div class="converter-content__card-result-title">Обьем в Мб:</div>
+            <div class="converter-content__card-result-itog" id="metresoutput1"></div>
+          </div>
+          <div class="converter-content__card-result">
+            <div class="converter-content__card-result-title">Обьем в ГБ:</div>
+            <div class="converter-content__card-result-itog" id="smoutput1"></div>
+          </div>
+          <div class="converter-content__card-result">
+            <div class="converter-content__card-result-title">Обьем в Байтах:</div>
+            <div class="converter-content__card-result-itog" id="milimetroutput1"></div>
+          </div>
+        </div>
+
+        <div class="converter-content__card">
+          <div class="converter-content__card-title">
+            <div class="converter-content__card-title-text">Введите скорость
+              в Мегабайтах (Мб)</div>
+          </div>
+          <input type="number" class="converter-content__card-input" id="volumeInput2">
+
+          <div class="converter-content__card-result">
+            <div class="converter-content__card-result-title">Обьем в ГБ:</div>
+            <div class="converter-content__card-result-itog" id="metresoutput2"></div>
+          </div>
+          <div class="converter-content__card-result">
+            <div class="converter-content__card-result-title">Обьем в Кб:</div>
+            <div class="converter-content__card-result-itog" id="smoutput2"></div>
+          </div>
+          <div class="converter-content__card-result">
+            <div class="converter-content__card-result-title">Обьем в Байтах:</div>
+            <div class="converter-content__card-result-itog" id="milimetroutput2"></div>
+          </div>
+        </div>
+
+        <div class="converter-content__card">
+          <div class="converter-content__card-title">
+            <div class="converter-content__card-title-text">Введите скорость
+              в Гигабайтах (ГБ)</div>
+          </div>
+          <input type="number" class="converter-content__card-input" id="volumeInput3">
+
+          <div class="converter-content__card-result">
+            <div class="converter-content__card-result-title">Обьем в Мб:</div>
+            <div class="converter-content__card-result-itog" id="metresoutput3"></div>
+          </div>
+          <div class="converter-content__card-result">
+            <div class="converter-content__card-result-title">Обьем в Кб</div>
+            <div class="converter-content__card-result-itog" id="smoutput3"></div>
+          </div>
+          <div class="converter-content__card-result">
+            <div class="converter-content__card-result-title">Обьем в Байтах:</div>
+            <div class="converter-content__card-result-itog" id="milimetroutput3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('volumeInput1').addEventListener('input', function (e) {
+      let a = e.target.value;
+      document.getElementById('metresoutput1').innerHTML = `${(a / 1024).toFixed(2)} mb`;
+      document.getElementById('smoutput1').innerHTML = `${(a / 1024 / 1024).toFixed(8)} gb`;
+      document.getElementById('milimetroutput1').innerHTML = `${(a * 1024)} bytes`
+    })
+    document.getElementById('volumeInput2').addEventListener('input', function (e) {
+      let a = e.target.value;
+      document.getElementById('metresoutput2').innerHTML = a / 1024;
+      document.getElementById('smoutput2').innerHTML = a / 1024 / 1024;
+      document.getElementById('milimetroutput2').innerHTML = a * 10000000;
+    })
+    document.getElementById('volumeInput3').addEventListener('input', function (e) {
+      let a = e.target.value;
+      document.getElementById('metresoutput3').innerHTML = a / 1024;
+      document.getElementById('smoutput3').innerHTML = a / 1024 / 1024;
+      document.getElementById('milimetroutput3').innerHTML = a * 10000000;
+    })
+  </script>
+</body>
+
+</html>
