@@ -25,15 +25,15 @@
 
           <div class="converter-content__card-result">
             <div class="converter-content__card-result-title">Обьем в Мб:</div>
-            <div class="converter-content__card-result-itog" id="metresoutput1"></div>
+            <div class="converter-content__card-result-itog" id="mboutput1"></div>
           </div>
           <div class="converter-content__card-result">
             <div class="converter-content__card-result-title">Обьем в ГБ:</div>
-            <div class="converter-content__card-result-itog" id="smoutput1"></div>
+            <div class="converter-content__card-result-itog" id="gboutput1"></div>
           </div>
           <div class="converter-content__card-result">
             <div class="converter-content__card-result-title">Обьем в Байтах:</div>
-            <div class="converter-content__card-result-itog" id="milimetroutput1"></div>
+            <div class="converter-content__card-result-itog" id="bytesoutput1"></div>
           </div>
         </div>
 
@@ -46,15 +46,15 @@
 
           <div class="converter-content__card-result">
             <div class="converter-content__card-result-title">Обьем в ГБ:</div>
-            <div class="converter-content__card-result-itog" id="metresoutput2"></div>
+            <div class="converter-content__card-result-itog" id="gboutput2"></div>
           </div>
           <div class="converter-content__card-result">
             <div class="converter-content__card-result-title">Обьем в Кб:</div>
-            <div class="converter-content__card-result-itog" id="smoutput2"></div>
+            <div class="converter-content__card-result-itog" id="kboutput2"></div>
           </div>
           <div class="converter-content__card-result">
             <div class="converter-content__card-result-title">Обьем в Байтах:</div>
-            <div class="converter-content__card-result-itog" id="milimetroutput2"></div>
+            <div class="converter-content__card-result-itog" id="bytesoutput2"></div>
           </div>
         </div>
 
@@ -67,15 +67,15 @@
 
           <div class="converter-content__card-result">
             <div class="converter-content__card-result-title">Обьем в Мб:</div>
-            <div class="converter-content__card-result-itog" id="metresoutput3"></div>
+            <div class="converter-content__card-result-itog" id="mboutput3"></div>
           </div>
           <div class="converter-content__card-result">
             <div class="converter-content__card-result-title">Обьем в Кб</div>
-            <div class="converter-content__card-result-itog" id="smoutput3"></div>
+            <div class="converter-content__card-result-itog" id="kboutput3"></div>
           </div>
           <div class="converter-content__card-result">
             <div class="converter-content__card-result-title">Обьем в Байтах:</div>
-            <div class="converter-content__card-result-itog" id="milimetroutput3"></div>
+            <div class="converter-content__card-result-itog" id="bytesoutput3"></div>
           </div>
         </div>
       </div>
@@ -85,21 +85,21 @@
   <script>
     document.getElementById('volumeInput1').addEventListener('input', function (e) {
       let a = e.target.value;
-      document.getElementById('metresoutput1').innerHTML = `${(a / 1024).toFixed(2)} mb`;
-      document.getElementById('smoutput1').innerHTML = `${(a / 1024 / 1024).toFixed(8)} gb`;
-      document.getElementById('milimetroutput1').innerHTML = `${(a * 1024)} bytes`
+      document.getElementById('mboutput1').innerHTML = `${(a / 1024).toFixed(3)} mb`;
+      document.getElementById('gboutput1').innerHTML = `${(a / 1024 / 1024).toFixed(8)} gb`;
+      document.getElementById('bytesoutput1').innerHTML = `${(a * 1024)} byte`
     })
     document.getElementById('volumeInput2').addEventListener('input', function (e) {
       let a = e.target.value;
-      document.getElementById('metresoutput2').innerHTML = a / 1024;
-      document.getElementById('smoutput2').innerHTML = a / 1024 / 1024;
-      document.getElementById('milimetroutput2').innerHTML = a * 10000000;
+      document.getElementById('gboutput2').innerHTML = `${(a / 1024).toFixed(4)} gb`;
+      document.getElementById('kboutput2').innerHTML = `${a * 1024} KiB`;
+      document.getElementById('bytesoutput2').innerHTML = `${a * 1024 * 1024} byte`;
     })
     document.getElementById('volumeInput3').addEventListener('input', function (e) {
       let a = e.target.value;
-      document.getElementById('metresoutput3').innerHTML = a / 1024;
-      document.getElementById('smoutput3').innerHTML = a / 1024 / 1024;
-      document.getElementById('milimetroutput3').innerHTML = a * 10000000;
+      document.getElementById('mboutput3').innerHTML = `${a * 1024} mb`;
+      document.getElementById('kboutput3').innerHTML = `${a * 1024 * 1024} kib`;
+      document.getElementById('bytesoutput3').innerHTML = `${a * 1024 * 1024 * 1024} byte`;
     })
   </script>
 </body>
